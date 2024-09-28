@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
-<input type="text" id="folderPath" placeholder="フォルダパスを入力">
-<button onclick="copyPath()">コピー</button>
+<input type="text" id="folderPath" placeholder="フォルダパスを入力" oninput="updatePath()">
+<div id="output"></div>
 
 <script>
+function updatePath() {
+    var path = document.getElementById("folderPath").value;
+    document.getElementById("output").innerText = path;
+}
+
 function copyPath() {
     var path = document.getElementById("folderPath").value;
     var command = 'dir /s /b /a-d ' + path;
