@@ -3,7 +3,7 @@
 <body>
 <input type="text" id="folderPath" placeholder="フォルダパスを入力" oninput="updatePath()">
 <div id="output"></div>
-
+<button onclick="copyPath()">コピー</button>
 <script>
 function updatePath() {
     var path = document.getElementById("folderPath").value;
