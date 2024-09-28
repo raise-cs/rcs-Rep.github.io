@@ -18,15 +18,19 @@ function loadNavigation() {
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
             // ハンバーガーメニューのトグル
-            document.getElementById('navbar-toggle').addEventListener('click', function() {
-                var menu = document.getElementById('navbar-menu');
-                if (menu.style.display === 'block') {
-                    menu.style.display = 'none';
-                } else {
-                    menu.style.display = 'block';
-                }
-            });
-        });
+            const navbarToggle = document.getElementById('navbar-toggle');
+            if (navbarToggle) {
+                navbarToggle.addEventListener('click', function() {
+                    var menu = document.getElementById('navbar-menu');
+                    if (menu.style.display === 'block') {
+                        menu.style.display = 'none';
+                    } else {
+                        menu.style.display = 'block';
+                    }
+                });
+            }
+        })
+        .catch(error => console.error('Error loading navigation:', error));
 }
 
 document.addEventListener('DOMContentLoaded', loadNavigation);
