@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+#output {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+</style>
+</head>
 <body>
 <input type="text" id="folderPath" placeholder="フォルダパスを入力" oninput="updatePath()">
 <button onclick="copyPath()">コピー</button>
