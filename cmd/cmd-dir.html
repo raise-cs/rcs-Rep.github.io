@@ -4,35 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>フォルダ内のファイルのフルパス取得方法</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
 </head>
 <body>
-    <!-- ナビゲーションバーの追加 -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="navbar-brand">ホーム</a>
-            <button class="navbar-toggle" id="navbar-toggle">
-                <span class="navbar-toggle-icon"></span>
-                <span class="navbar-toggle-icon"></span>
-                <span class="navbar-toggle-icon"></span>
-            </button>
-            <ul class="navbar-menu" id="navbar-menu">
-                <li><a href="about.html">会社概要</a></li>
-                <li><a href="services.html">サービス</a></li>
-                <li><a href="contact.html">お問い合わせ</a></li>
-            </ul>
-        </div>
-    </nav>
-
+    <!-- ナビゲーションのプレースホルダー -->
+    <div id="nav-placeholder"></div>
     <h1>フォルダ内のファイルのフルパス取得方法</h1>
     <section>
         <h2>説明</h2>
         <p>コマンドプロンプトでフォルダ内のファイルをフルパスで取得するには、以下のコマンドを使用します：</p>
         <div class="code-snippet">
-            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "[フォルダパス]"</code></pre>
             <button class="copy-button" onclick="copyToClipboard('dir /s /b /a-d &quot;[フォルダパス]&quot;', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "[フォルダパス]"</code></pre>
         </div>
         <ul>
             <li><strong>/s:</strong> サブディレクトリを含めて検索します。</li>
@@ -50,8 +35,8 @@
         </ul>
         <h3>結果をコマンドプロンプトに出力する方法</h3>
         <div class="code-snippet">
-            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "C:\Users\YourUsername\Documents"</code></pre>
             <button class="copy-button" onclick="copyToClipboard('dir /s /b /a-d &quot;C:\\Users\\YourUsername\\Documents&quot;', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "C:\Users\YourUsername\Documents"</code></pre>
         </div>
         <p>このコマンドを実行すると、指定したフォルダ（この例では Documents フォルダ）内のすべてのファイルのフルパスが表示されます。</p>
     </section>
@@ -59,14 +44,14 @@
         <h2>応用</h2>
         <h3>結果をファイルに出力する方法</h3>
         <div class="code-snippet">
-            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "C:\Users\YourUsername\Documents" > "C:\Users\YourUsername\file_list.txt"</code></pre>
             <button class="copy-button" onclick="copyToClipboard('dir /s /b /a-d &quot;C:\\Users\\YourUsername\\Documents&quot; > &quot;C:\\Users\\YourUsername\\file_list.txt&quot;', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "C:\Users\YourUsername\Documents" > "C:\Users\YourUsername\file_list.txt"</code></pre>
         </div>
         <p>これにより、結果が file_list.txt というファイルに保存されます。</p>
         <h3>クリップボードにコピーする方法</h3>
         <div class="code-snippet">
-            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "C:\Users\YourUsername\Documents" | clip</code></pre>
             <button class="copy-button" onclick="copyToClipboard('dir /s /b /a-d &quot;C:\\Users\\YourUsername\\Documents&quot; | clip', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "C:\Users\YourUsername\Documents" | clip</code></pre>
         </div>
         <div class="tip">
             クリップボードにコピーした後、メモ帳などのテキストエディタに貼り付けて内容を確認することができます。
@@ -74,30 +59,6 @@
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    <script>
-        function copyToClipboard(text, element) {
-            navigator.clipboard.writeText(text).then(function() {
-                element.textContent = 'コピーしました';
-                setTimeout(function() {
-                    element.textContent = 'コピー';
-                }, 2000);
-            }, function(err) {
-                element.textContent = 'コピーに失敗しました';
-                setTimeout(function() {
-                    element.textContent = 'コピー';
-                }, 2000);
-            });
-        }
-
-        // ハンバーガーメニューのトグル
-        document.getElementById('navbar-toggle').addEventListener('click', function() {
-            var menu = document.getElementById('navbar-menu');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        });
-    </script>
+    <script src="../js/scripts.js"></script>
 </body>
 </html>
