@@ -13,7 +13,7 @@ function copyToClipboard(text, element) {
 }
 
 function loadNavigation() {
-    fetch('/common/nav.html')
+    fetch('../common/nav.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('nav-placeholder').innerHTML = data;
