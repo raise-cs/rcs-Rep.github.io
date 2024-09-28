@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="folderPath" placeholder="フォルダパスを入力">
+<button onclick="copyPath()">コピー</button>
+
+<script>
+function copyPath() {
+    var path = document.getElementById("folderPath").value;
+    var command = 'dir /s /b /a-d ' + path;
+    navigator.clipboard.writeText(command).then(function() {
+        alert('コマンドをクリップボードにコピーしました：\n' + command);
+    }, function() {
+        alert('コピーに失敗しました。');
+    });
+}
+</script>
+</body>
+</html>
