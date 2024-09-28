@@ -20,14 +20,7 @@
 <div>
 <div class="line-numbers notion-code-block" style="display: flex; overflow-x: auto;">
 <div spellcheck="false" autocorrect="off" autocapitalize="off" placeholder=" " data-content-editable-leaf="true" contenteditable="false" style="flex-grow: 1; flex-shrink: 1; text-align: left; font-family: SFMono-Regular, Menlo, Consolas, &quot;PT Mono&quot;, &quot;Liberation Mono&quot;, Courier, monospace; font-size: 85%; tab-size: 2; padding: 34px 16px 32px 32px; min-height: 1em; color: rgb(55, 53, 47); white-space: pre;">
-<span class="token function" data-token-index="0">dir</span>
-<span class="" data-token-index="0"> </span>
-<span class="token operator" data-token-index="0">/</span>
-<span class="" data-token-index="0">s </span>
-<span class="token operator" data-token-index="0">/</span>
-<span class="" data-token-index="0">b </span>
-<span class="token operator" data-token-index="0">/</span>
-<span class="" data-token-index="0">a-d <div id="output"></div></span>
+<span class="token function" data-token-index="0">dir</span><span class="" data-token-index="0"> </span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">s </span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">b </span><span class="token operator" data-token-index="0">/</span><span class="" data-token-index="0">a-d <div id="output"></div></span>
 <span>
 </span>
 </div>
@@ -41,7 +34,7 @@
 <script>
 function updatePath() {
     var path = document.getElementById("folderPath").value;
-    document.getElementById("output").innerText = 'dir /s /b /a-d ' + path;
+    document.getElementById("output").innerText = path;
 }
 
 function copyPath() {
