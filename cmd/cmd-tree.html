@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フォルダ内のファイルをツリー表示で取得する</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+</head>
+<body>
+    <!-- ナビゲーションのプレースホルダー -->
+    <div id="nav-placeholder"></div>
+    <h1>フォルダ内のファイルをツリー表示で取得する</h1>
+    <section>
+        <h2>説明</h2>
+        <p>コマンドプロンプトでディレクトリ構造をツリー形式で表示するには、以下のコマンドを使用します。</p>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard('tree &quot;C:\Users\YourUsername\Documents&quot;', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">tree "C:\Users\YourUsername\Documents"</code></pre>
+        </div>
+    </section>
+    <section>
+        <h2>主なオプション</h2>
+        <ul>
+            <li><strong>/F:</strong> ファイルも表示します。</li>
+        </ul>
+    </section>
+    <section>
+        <h2>手順</h2>
+        <h3>１．コマンドプロンプトを開く</h3>
+        <p>以下の方法でコマンドプロンプトを開きます。</p>
+        <ul>
+            <li>方法1：Windowsキー + R を押し、「cmd」と入力してEnterを押す</li>
+            <li>方法2：スタートメニューで「コマンドプロンプト」または「cmd」を検索する</li>
+        </ul>
+        <h3>２．コマンドを実行する</h3>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard('tree /F  &quot;C:\Users\YourUsername\Documents&quot;', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">tree /F "C:\Users\YourUsername\Documents"</code></pre>
+        </div>
+        <p>このコマンドを実行すると、指定したフォルダ（この例では Documents フォルダ）内のすべてのファイルがツリー表示されます。</p>
+        <section>
+            <h3>実行結果のサンプル</h3>
+            <div class="code-snippet">
+                <pre class="line-numbers"><code class="language-batch">C:\Users\YourUsername\Documents
+├── file1.txt
+├── file2.txt
+└── Subfolder
+    └── file3.txt</code></pre>
+            </div>
+        </section>
+    </section>
+    <section>
+        <h2>応用</h2>
+        <h3>結果をファイルに出力する方法</h3>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard('tree /F  &quot;C:\Users\YourUsername\Documents&quot; > &quot;C:\Users\YourUsername\output.txt&quot;', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">tree /F "C:\Users\YourUsername\Documents" >  "C:\Users\YourUsername\output.txt"</code></pre>
+        </div>
+        <p>これにより、結果が <code>output.txt</code> というファイルに保存されます。</p>
+        <h3>クリップボードにコピーする方法</h3>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard('tree /F  &quot;C:\Users\YourUsername\Documents&quot; | clip', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">tree /F "C:\Users\YourUsername\Documents" | clip</code></pre>
+        </div>
+        <div class="tip">
+            クリップボードにコピーした後、メモ帳などのテキストエディタに貼り付けて内容を確認することができます。
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

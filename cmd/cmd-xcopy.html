@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xcopyコマンドの説明</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
+</head>
+<body>
+    <!-- ナビゲーションのプレースホルダー -->
+    <div id="nav-placeholder"></div>
+    <h1>xcopyコマンドの説明</h1>
+    <section>
+        <h2>説明</h2>
+        <p>コマンドプロンプトでファイルやディレクトリをコピーするには、以下のコマンドを使用します：</p>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard('xcopy &quot;[コピー元フォルダ]&quot; &quot;[コピー先フォルダ]&quot;', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">xcopy "[コピー元フォルダ]" "[コピー先フォルダ]"</code></pre>
+        </div>
+    </section>
+    <section>
+        <h2>主なオプション</h2>
+        <ul>
+            <li><strong>/E:</strong> 空のディレクトリも含めて、すべてのサブディレクトリをコピーします。</li>
+            <li><strong>/S:</strong> 空のディレクトリを除いて、すべてのサブディレクトリをコピーします。</li>
+            <li><strong>/H:</strong> 隠しファイルやシステムファイルもコピーします。</li>
+            <li><strong>/C:</strong> エラーを無視して続行します。</li>
+            <li><strong>/I:</strong> 目的地がディレクトリである場合に、ディレクトリを作成します。</li>
+        </ul>
+    </section>
+    <section>
+        <h2>手順</h2>
+        <h3>１．コマンドプロンプトを開く</h3>
+        <p>以下の方法でコマンドプロンプトを開きます。</p>
+        <ul>
+            <li>方法1：Windowsキー + R を押し、「cmd」と入力してEnterを押す</li>
+            <li>方法2：スタートメニューで「コマンドプロンプト」または「cmd」を検索する</li>
+        </ul>
+        <h3>２．コマンドを実行する</h3>
+        <section>
+            <h4>/E オプションを使用したコマンドと実行結果</h4>
+            <div class="code-snippet">
+                <button class="copy-button" onclick="copyToClipboard('xcopy /E &quot;C:\\source&quot; &quot;D:\\destination&quot;', this)">コピー</button>
+                <pre class="line-numbers"><code class="language-batch">xcopy /E "C:\source" "D:\destination"</code></pre>
+            </div>
+            <div class="code-snippet">
+                <pre class="line-numbers"><code class="language-batch">
+C:\source\file1.txt
+C:\source\file2.txt
+C:\source\Subfolder\file3.txt
+3 File(s) copied
+                </code></pre>
+            </div>
+        </section>
+        <section>
+            <h4>/S オプションを使用したコマンドと実行結果</h4>
+            <div class="code-snippet">
+                <button class="copy-button" onclick="copyToClipboard('xcopy /S &quot;C:\\source&quot; &quot;D:\\destination&quot;', this)">コピー</button>
+                <pre class="line-numbers"><code class="language-batch">xcopy /S "C:\source" "D:\destination"</code></pre>
+            </div>
+            <div class="code-snippet">
+                <pre class="line-numbers"><code class="language-batch">
+C:\source\file1.txt
+C:\source\file2.txt
+C:\source\Subfolder\file3.txt
+3 File(s) copied
+                </code></pre>
+            </div>
+        </section>
+        <section>
+            <h4>/H オプションを使用したコマンドと実行結果</h4>
+            <div class="code-snippet">
+                <button class="copy-button" onclick="copyToClipboard('xcopy /H &quot;C:\\source&quot; &quot;D:\\destination&quot;', this)">コピー</button>
+                <pre class="line-numbers"><code class="language-batch">xcopy /H "C:\source" "D:\destination"</code></pre>
+            </div>
+            <div class="code-snippet">
+                <pre class="line-numbers"><code class="language-batch">
+C:\source\file1.txt
+C:\source\file2.txt
+C:\source\hiddenfile.txt
+3 File(s) copied
+                </code></pre>
+            </div>
+        </section>
+        <section>
+            <h4>/C オプションを使用したコマンドと実行結果</h4>
+            <div class="code-snippet">
+                <button class="copy-button" onclick="copyToClipboard('xcopy /C &quot;C:\\source&quot; &quot;D:\\destination&quot;', this)">コピー</button>
+                <pre class="line-numbers"><code class="language-batch">xcopy /C "C:\source" "D:\destination"</code></pre>
+            </div>
+            <div class="code-snippet">
+                <pre class="line-numbers"><code class="language-batch">
+C:\source\file1.txt
+C:\source\file2.txt
+C:\source\Subfolder\file3.txt
+3 File(s) copied
+                </code></pre>
+            </div>
+        </section>
+        <section>
+            <h4>/I オプションを使用したコマンドと実行結果</h4>
+            <div class="code-snippet">
+                <button class="copy-button" onclick="copyToClipboard('xcopy /I &quot;C:\\source&quot; &quot;D:\\destination&quot;', this)">コピー</button>
+                <pre class="line-numbers"><code class="language-batch">xcopy /I "C:\source" "D:\destination"</code></pre>
+            </div>
+            <div class="code-snippet">
+                <pre class="line-numbers"><code class="language-batch">
+C:\source\file1.txt
+C:\source\file2.txt
+C:\source\Subfolder\file3.txt
+3 File(s) copied
+                </code></pre>
+            </div>
+        </section>
+    </section>
+    <section>
+        <h2>応用</h2>
+        <h3>結果をファイルに出力する方法</h3>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard('xcopy C:\\source D:\\destination /E > log.txt', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">xcopy C:\source D:\destination /E > log.txt</code></pre>
+        </div>
+        <p>これにより、コピーの結果が <code>log.txt</code> というファイルに保存されます。</p>
+        <h3>クリップボードにコピーする方法</h3>
+        <div class="code-snippet">
+            <button class="copy-button" onclick="copyToClipboard('xcopy C:\\source D:\\destination /E | clip', this)">コピー</button>
+            <pre class="line-numbers"><code class="language-batch">xcopy C:\source D:\destination /E | clip</code></pre>
+        </div>
+        <div class="tip">
+            クリップボードにコピーした後、メモ帳などのテキストエディタに貼り付けて内容を確認することができます。
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

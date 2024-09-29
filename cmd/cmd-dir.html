@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>フォルダ内のファイルのフルパス取得方法</title>
+    <title>フォルダ内のファイルをフルパスで取得する</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.css">
@@ -11,14 +11,15 @@
 <body>
     <!-- ナビゲーションのプレースホルダー -->
     <div id="nav-placeholder"></div>
-    <h1>フォルダ内のファイルのフルパス取得方法</h1>
+    <h1>フォルダ内のファイルをフルパスで取得する</h1>
     <section>
         <h2>説明</h2>
-        <p>コマンドプロンプトでフォルダ内のファイルをフルパスで取得するには、以下のコマンドを使用します：</p>
+        <p>コマンドプロンプトでフォルダ内のファイルをフルパスで取得するには、以下のコマンドを使用します。</p>
         <div class="code-snippet">
             <button class="copy-button" onclick="copyToClipboard('dir /s /b /a-d &quot;[フォルダパス]&quot;', this)">コピー</button>
             <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "[フォルダパス]"</code></pre>
         </div>
+        <h2>主なオプション</h2>
         <ul>
             <li><strong>/s:</strong> サブディレクトリを含めて検索します。</li>
             <li><strong>/b:</strong> ベアフォーマット（ヘッダーやサマリーなしの最小表示）で出力します。</li>
@@ -27,18 +28,26 @@
     </section>
     <section>
         <h2>手順</h2>
-        <h3>コマンドプロンプトを開く方法</h3>
+        <h3>１．コマンドプロンプトを開く</h3>
         <p>以下の方法でコマンドプロンプトを開きます。</p>
         <ul>
             <li>方法1：Windowsキー + R を押し、「cmd」と入力してEnterを押す</li>
             <li>方法2：スタートメニューで「コマンドプロンプト」または「cmd」を検索する</li>
         </ul>
-        <h3>結果をコマンドプロンプトに出力する方法</h3>
+        <h3>２．コマンドを実行する</h3>
         <div class="code-snippet">
             <button class="copy-button" onclick="copyToClipboard('dir /s /b /a-d &quot;C:\\Users\\YourUsername\\Documents&quot;', this)">コピー</button>
             <pre class="line-numbers"><code class="language-batch">dir /s /b /a-d "C:\Users\YourUsername\Documents"</code></pre>
         </div>
         <p>このコマンドを実行すると、指定したフォルダ（この例では Documents フォルダ）内のすべてのファイルのフルパスが表示されます。</p>
+    <section>
+        <h2>実行結果のサンプル</h2>
+        <div class="code-snippet">
+            <pre class="line-numbers"><code class="language-batch">C:\Users\YourUsername\Documents\file1.txt
+C:\Users\YourUsername\Documents\file2.txt
+C:\Users\YourUsername\Documents\Subfolder\file3.txt</code></pre>
+        </div>
+    </section>
     </section>
     <section>
         <h2>応用</h2>
@@ -57,6 +66,7 @@
             クリップボードにコピーした後、メモ帳などのテキストエディタに貼り付けて内容を確認することができます。
         </div>
     </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="../js/scripts.js"></script>
